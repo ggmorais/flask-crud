@@ -36,7 +36,7 @@ class Post(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now)
 
 
-def get_columns(tables: db.Model):
+def get_columns(tables: List[db.Model] | db.Model) -> dict:
     if type(tables) != list:
         tables = [tables]
 
